@@ -11,7 +11,7 @@ class Course extends Model
 
     protected $fillable = ['name', 'hours'];
 
-    public function Students()
+    public function students()
     {
         return $this->belongsToMany(Student::class, 'course_student')->withTimestamps();
     }

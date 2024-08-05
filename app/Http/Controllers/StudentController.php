@@ -13,7 +13,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $students = Student::latest()->get();
 
         $data = [
             'status' => 'success',
@@ -46,7 +46,7 @@ class StudentController extends Controller
 
         $data = [
             'status' => 'success',
-            'message' => 'Student created successfully',
+            'message' => 'Estudiante creado correctamente',
             'data' => $student
         ];
         return response()->json($data, 201);
@@ -102,14 +102,14 @@ class StudentController extends Controller
 
             $data = [
                 'status' => 'success',
-                'message' => 'Student updated successfully',
+                'message' => 'Estudiante actualizado correctamente',
                 'data' => $student
             ];
             return response()->json($data, 200);
         } else {
             $data = [
                 'status' => 'error',
-                'message' => 'Student not found',
+                'message' => 'Estudiante no encontrado',
                 'data' => null
             ];
             return response()->json($data, 404);
@@ -128,14 +128,14 @@ class StudentController extends Controller
 
             $data = [
                 'status' => 'success',
-                'message' => 'Student deleted successfully',
+                'message' => 'Estudiante eliminado correctamente',
                 'data' => null
             ];
             return response()->json($data, 200);
         } else {
             $data = [
                 'status' => 'error',
-                'message' => 'Student not found',
+                'message' => 'Estudiante no encontrado',
                 'data' => null
             ];
             return response()->json($data, 404);

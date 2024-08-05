@@ -15,7 +15,7 @@ class Student extends Model
         'photo',
     ];
 
-    public function Courses()
+    public function courses()
     {
         return $this->belongsToMany(Course::class, 'course_student')->withTimestamps();
     }
